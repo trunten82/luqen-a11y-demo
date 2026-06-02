@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body{font-family:Arial,Helvetica,sans-serif;margin:0;color:#1a1a1a}
+  header{background:#0a2540;color:#fff;padding:1rem 2rem}
+  .fake-h{font-size:1.8rem;font-weight:700;margin:1.5rem 2rem 0.5rem}
+  main{padding:0 2rem 3rem;max-width:60rem}
+  .muted{color:#b9b9b9}
+  .pill{display:inline-block;padding:.3rem .8rem;border-radius:1rem;background:#0a2540;color:#fff}
+  .menu{position:relative;display:inline-block}
+  .menu-panel{display:none;position:absolute;background:#fff;border:1px solid #ccc;padding:.5rem}
+  .menu:hover .menu-panel{display:block}
+  table{border-collapse:collapse;margin:1rem 0}
+  td{border:1px solid #ccc;padding:.4rem .8rem}
+  .status-ok{color:#19a974}
+  button.cta{background:#635bff;color:#fff;border:0;padding:.6rem 1.2rem;border-radius:6px}
+  a{color:#5b8def}
+</style>
+</head>
+<body>
+<header>
+  <span style="font-size:1.4rem;font-weight:700">Lumen Analytics</span>
+  <nav style="float:right">
+    <div class="menu">
+      <span onclick="document.getElementById('mp').style.display='block'" style="cursor:pointer">Products ▾</span>
+      <div class="menu-panel" id="mp"><a href="#a">Dashboards</a> · <a href="#b">Reports</a></div>
+    </div>
+  </nav>
+</header>
+
+<!-- Visual heading faked with a div (vision-only: WCAG 1.3.1) -->
+<div class="fake-h">Analytics that move your business</div>
+
+<main>
+  <h1>Lumen Analytics</h1>
+
+  <!-- image with no alt (1.1.1) -->
+  <p><img src="https://picsum.photos/id/180/720/360" width="720"></p>
+
+  <!-- heading level skip h1 -> h4 (1.3.1 / 2.4.6) -->
+  <h4>Why teams choose Lumen</h4>
+
+  <!-- low contrast (1.4.3) -->
+  <p class="muted">Real-time dashboards, automated reports, and alerts that keep everyone aligned.</p>
+
+  <!-- color-only status indication (1.4.1 - vision/behavioral) -->
+  <p>System status: <span class="status-ok">●</span> (all green)</p>
+
+  <!-- vague link (2.4.4) -->
+  <p>To read our security whitepaper, <a href="/security.html">click here</a>.</p>
+
+  <!-- table with no header cells (1.3.1) -->
+  <table>
+    <tr><td>Plan</td><td>Price</td></tr>
+    <tr><td>Starter</td><td>$29</td></tr>
+    <tr><td>Growth</td><td>$99</td></tr>
+  </table>
+
+  <!-- list built from divs instead of ul/li (1.3.1) -->
+  <div class="features">
+    <div>• Live dashboards</div>
+    <div>• Scheduled exports</div>
+    <div>• Anomaly alerts</div>
+  </div>
+
+  <!-- newsletter form: input without label, empty button (1.3.1/3.3.2/4.1.2) -->
+  <h2>Stay in the loop</h2>
+  <form>
+    <input type="text" name="email" placeholder="you@company.com">
+    <button class="cta"></button>
+  </form>
+
+  <!-- duplicate id (4.1.1) -->
+  <p id="cta">Trusted by 2,000+ teams.</p>
+  <p id="cta">Start your free trial today.</p>
+
+  <!-- iframe with no title (4.1.2 / 2.4.1) -->
+  <h2>Watch the overview</h2>
+  <iframe src="https://www.openstreetmap.org/export/embed.html" width="600" height="300"></iframe>
+
+  <!-- empty link (2.4.4) -->
+  <p>Follow us: <a href="https://example.com/x"></a></p>
+
+  <p><button class="cta" onclick="document.getElementById('more').style.display='block'">Show more</button></p>
+  <div id="more" style="display:none"><p>Extra details that appear with no focus management or aria-live (4.1.3 / 2.4.3).</p></div>
+</main>
+</body>
+</html>
